@@ -1,41 +1,43 @@
-[hr]
-[center][color=red][size=16pt][b]ATTACHMENT EXTENSION v2.4[/b][/size][/color]
-[url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3039]Link to Mod[/url]
-[/center]
-[hr]
+-------
 
-[color=blue][b][size=12pt][u]Introduction[/u][/size][/b][/color]
+# ATTACHMENT EXTENSION v2.4
+
+[**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=3039)
+
+-------
+
+## Introduction
 Evidentally, some FTP clients, which shall rename nameless (*cough*cough* FileZilla), doesn't transfer files without an extension correctly without some work.  After reading at one of these threads on the Simple Machines forum (lost the link), I wondered how hard it would be to add an extension to the filenames that attachments are stored under.  So I did some research and figured out it wasn't hard at all.....
 
-[b]PLEASE NOTE[/b] that uploaded avatars are considered attachments within SMF and this mod will rename them as well as regular attachments!
+**PLEASE NOTE** that uploaded avatars are considered attachments within SMF and this mod will rename them as well as regular attachments!
 
-[color=blue][b][size=12pt][u]What It Does[/u][/size][/b][/color]
+## What It Does
 This mod makes a small change to Subs.php to add the ".321" extension to all attachment filenames.  It also renames all attachments to have the ".321" extension.  Upon uninstalling, it removes the ".321" extension.  This mod also modified the code for the PM attachments mod, if present, in order to effect the same modification to it.
 
-[b]AEVA MEDIA:[/b] This mod adds the proper extension (lowercase) to the media attachment file, thus [b]1_blah[/b] becomes [b]1_blah.jpg[/b] if the original filename has an extension of [b]jpg[/b].
+**AEVA MEDIA:** This mod adds the proper extension (lowercase) to the media attachment file, thus **1_blah** becomes **1_blah.jpg** if the original filename has an extension of **jpg**.
 
-[color=blue][b][size=12pt][u]Credits[/u][/size][/b][/color]
-[url=http://www.simplemachines.org/community/index.php?action=profile;u=391249]stucki[/url] requested the addition of support for Aeva Media files.  Thanks, Stucki!
+## Credits
+[stucki](http://www.simplemachines.org/community/index.php?action=profile;u=391249) requested the addition of support for Aeva Media files.  Thanks, Stucki!
 
-[color=blue][b][size=12pt][u]Admin Settings[/u][/size][/b][/color]
+## Admin Settings
 There are no admin settings.  To disable it, you must remove this mod.
 
-[color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
+## Compatibility Notes
 This mod was tested on SMF 2.0.9, but should work on any version of SMF 2.0.x.  SMF 1.x and SMF 2.1 is not and will not be supported.
 
-If you use the [url=http://custom.simplemachines.org/mods/index.php?mod=1974]PM Attachments[/url] mod, it should be installed before this mod.
+If you use the [PM Attachments](http://custom.simplemachines.org/mods/index.php?mod=1974) mod, it should be installed before this mod.
 
-If you use the [url=http://custom.simplemachines.org/mods/index.php?mod=977]Aeva Media v1.4w[/url] mod, it should be installed before this mod.
+If you use the [Aeva Media v1.4w](http://custom.simplemachines.org/mods/index.php?mod=977) mod, it should be installed before this mod.
 
 This mod should be installed AFTER a forum conversion (phpbb -> smf), not before, as files will not be named correctly during the conversion.
 
-[color=blue][b][size=12pt][u]Compatibility Notes[/u][/size][/b][/color]
+## Compatibility Notes
 This mod was tested on SMF 2.0.8, but should work on earlier versions of SMF 2.0.x.  SMF 1.x is not and will not be supported.
 
-[color=blue][b][size=12pt][u]Changelog[/u][/size][/b][/color]
-The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/attachment-extensions/]XPtsp.com[/url].
+## Changelog
+The changelog can be viewed at [XPtsp](http://www.xptsp.com/board/free-modifications/attachment-extensions/).
 
-[color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
+**## License**
 Copyright (c) 2015, Douglas Orend
 All rights reserved.
 
