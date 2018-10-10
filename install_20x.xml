@@ -29,7 +29,7 @@
 ]]></add>
 	</operation>
 </file>
-<file name="$sourcedir/Aeva-Subs-Vital.php">
+<file name="$sourcedir/Aeva-Subs-Vital.php" error="skip">
 	<operation>
 		<search position="replace"><![CDATA[$enc_name = $id . '_' . strtr($clean_name, '.', '_') . md5($clean_name) . '_ext' . $ext;]]></search>
 		<add><![CDATA[$enc_name = $id . '_' . strtr($clean_name, '.', '_') . md5($clean_name) . '_ext.' . $ext;]]></add>

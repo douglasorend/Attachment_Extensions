@@ -1,3 +1,6 @@
+v2.1 - April 25th, 2015
+o Fixed package-info.xml so that Sources/Aeva-Subs-Vital.php is skipped if not found.
+
 v2.0 - June 6th, 2014
 o Added attachment support for Aeva Media v1.4w
 o Fixed install.php script to correctly handle pm attachments, as they were skipped over (somehow)
