@@ -32,9 +32,9 @@ while ($row = $smcFunc['db_fetch_assoc']($request))
 	else
 		$path = $modSettings['attachmentUploadDir'];
 	$path = $path . '/' . $row['id_attach'] . '_' . $row['file_hash'];
-	if (file_exists($path) && is_writable($path))
+	if (file_exists($path))
 		rename($path, $path . '.dat');
-	elseif (file_exists($path . '.321') && is_writable($path . '.321'))
+	elseif (file_exists($path . '.321'))
 		rename($path . '.321', $path . '.dat');
 }
 $smcFunc['db_free_result']($request);
@@ -56,8 +56,10 @@ while ($row = $smcFunc['db_fetch_assoc']($tblchk))
 	{
 		$path = $modSettings['pmAttachmentUploadDir'];
 		$path = $path . '/' . $file['id_attach'] . '_' . $file['file_hash'];
-		if (file_exists($path) && is_writable($path))
+		if (file_exists($path))
 			rename($path, $path . '.dat');
+		elseif (file_exists($path . '.321'))
+			rename($path . '.321', $path . '.dat');
 	}
 	$smcFunc['db_free_result']($request);
 	break;
@@ -67,41 +69,46 @@ $smcFunc['db_free_result']($tblchk);
 //==========================================================================
 //                        Avea Media support
 //==========================================================================
-// Figure out where the attachment path(s) are:
-$tblchk = $smcFunc['db_query']('', 'show tables like "%aeva_settings"', array());
-while ($row = $smcFunc['db_fetch_assoc']($tblchk))
+if (file_exists($sourcedir . "/Aeva-Media.php"))
 {
 	require_once($sourcedir . "/Aeva-Media.php");
 	require_once($sourcedir . "/Aeva-Subs-Vital.php");
 
-	// Determine where the base Aeva Media folder is:
-	$request = $smcFunc['db_query']('', '
-		SELECT value 
-		FROM {db_prefix}aeva_settings
-		WHERE name  = "data_dir_path"',
-		array()
-	);
-	$row = $smcFunc['db_fetch_assoc']($request);
-	$dir = $row['value'];
-	$smcFunc['db_free_result']($request);
-
-	// Let's start renaming files to have a proper extension:
-	$request = $smcFunc['db_query']('', '
-		SELECT id_file, filename, directory
-		FROM {db_prefix}aeva_files
-		WHERE id_file > 4',
-		array()
-	);
-	while ($file = $smcFunc['db_fetch_assoc']($request))
+	// Figure out where the attachment path(s) are:
+	$tblchk = $smcFunc['db_query']('', 'show tables like "%aeva_settings"', array());
+	while ($row = $smcFunc['db_fetch_assoc']($tblchk))
 	{
-		$ext = aeva_getExt($file['filename']);
-		$tmp = $dir . '/' . $file['directory'] . '/' . aeva_getEncryptedFilename($file['filename'], $file['id_file']);
-		$old = str_replace("_ext." . $ext, "_ext" . $ext, $tmp);
-		$new = str_replace("_ext" . $ext, "_ext." . $ext, $tmp);
-		if (file_exists($old) && is_writable($old))
-			rename($old, $new);
+		// Determine where the base Aeva Media folder is:
+		$request = $smcFunc['db_query']('', '
+			SELECT value 
+			FROM {db_prefix}aeva_settings
+			WHERE name  = "data_dir_path"',
+			array()
+		);
+		$row = $smcFunc['db_fetch_assoc']($request);
+		$dir = $row['value'];
+		$smcFunc['db_free_result']($request);
+
+		// Let's start renaming files to have a proper extension:
+		$request = $smcFunc['db_query']('', '
+			SELECT id_file, filename, directory
+			FROM {db_prefix}aeva_files
+			WHERE id_file > 4',
+			array()
+		);
+		while ($file = $smcFunc['db_fetch_assoc']($request))
+		{
+			$ext = aeva_getExt($file['filename']);
+			$tmp = $dir . '/' . $file['directory'] . '/' . aeva_getEncryptedFilename($file['filename'], $file['id_file']);
+			$old = str_replace("_ext." . $ext, "_ext" . $ext, $tmp);
+			$new = str_replace("_ext" . $ext, "_ext." . $ext, $tmp);
+			if (file_exists($old))
+				rename($old, $new);
+			elseif (file_exists($path . '.321'))
+				rename($path . '.321', $path . '.dat');
+		}
+		$smcFunc['db_free_result']($request);
 	}
-	$smcFunc['db_free_result']($request);
+	$smcFunc['db_free_result']($tblchk);
 }
-$smcFunc['db_free_result']($tblchk);
 ?>

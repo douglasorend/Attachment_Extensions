@@ -1,5 +1,5 @@
 [hr]
-[center][color=red][size=16pt][b]CHANGE ATTACHMENT EXTENSION v2.2[/b][/size][/color]
+[center][color=red][size=16pt][b]ATTACHMENT EXTENSION v2.3[/b][/size][/color]
 [url=http://www.simplemachines.org/community/index.php?action=profile;u=253913][b]By Dougiefresh[/b][/url] -> [url=http://custom.simplemachines.org/mods/index.php?mod=3039]Link to Mod[/url]
 [/center]
 [hr]
