@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>dao:Attachment_Ext</id>
+	<name>Attachment Extension</name>
+	<version>1.2</version>
+	<type>modification</type>
+
+	<install for="2.0 RC4, 2.0 RC5, 2.0 - 2.0.99">
+		<readme type="file" parsebbc="true">readme.txt</readme>
+		<modification>install.xml</modification>
+		<code>install.php</code>
+	</install>
+	<uninstall for="2.0 RC4, 2.0 RC5, 2.0 - 2.0.99">
+		<modification reverse="true">install.xml</modification>
+		<code>uninstall.php</code>
+	</uninstall>
+</package-info>

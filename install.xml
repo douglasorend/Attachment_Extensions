@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+	<id>dao:Attachment_Ext</id>
+	<name>Attachment Extension</name>
+	<version>1.2</version>
+
+	<file name="$sourcedir/Subs.php">
+    <operation>
+      <search position="replace"><![CDATA[		$path = $modSettings['attachmentUploadDir'];
+
+	return $path . '/' . $attachment_id . '_' . $file_hash;
+]]></search>
+			<add><![CDATA[		$path = $modSettings['attachmentUploadDir'];
+
+	$path = $path . '/' . $attachment_id . '_' . $file_hash;
+	return $path . (file_exists($path) ? '' : '.321');
+]]></add>
+			</search>
+		</operation>
+
+    <operation error="ignore">
+      <search position="replace"><![CDATA[		$path = $modSettings['pmAttachmentUploadDir'];
+
+	return $path . '/' . $attachment_id . '_' . $file_hash;
+]]></search>
+			<add><![CDATA[		$path = $modSettings['pmAttachmentUploadDir'];
+
+	$path = $path . '/' . $attachment_id . '_' . $file_hash;
+	return $path . (file_exists($path) ? '' : '.321');
+]]></add>
+		</operation>
+	</file>
+</modification>
