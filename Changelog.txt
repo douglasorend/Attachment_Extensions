@@ -1,0 +1,12 @@
+v2.0 - June 6th, 2014
+o Added attachment support for Aeva Media v1.4w
+o Fixed install.php script to correctly handle pm attachments, as they were skipped over (somehow)
+
+v1.2 - August 4th, 2013
+o Removed unnecessary extra ZIP file inside package.  No upgrade required.
+
+v1.1 - May 5th, 2013
+o Package updated to work with SMF 2.0 and up.  No upgrade required.
+
+v1.0 - May 14th, 2011
+o Initial Release of the mod

@@ -1,34 +1,38 @@
 <?xml version="1.0"?>
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
-	<id>dao:Attachment_Ext</id>
-	<name>Attachment Extension</name>
-	<version>1.2</version>
+<id>dao:Attachment_Ext</id>
+<name>Attachment Extension</name>
+<version>2.0</version>
 
-	<file name="$sourcedir/Subs.php">
-    <operation>
-      <search position="replace"><![CDATA[		$path = $modSettings['attachmentUploadDir'];
+<file name="$sourcedir/Subs.php">
+	<operation>
+		<search position="replace"><![CDATA[$path = $modSettings['attachmentUploadDir'];
 
 	return $path . '/' . $attachment_id . '_' . $file_hash;
 ]]></search>
-			<add><![CDATA[		$path = $modSettings['attachmentUploadDir'];
+		<add><![CDATA[$path = $modSettings['attachmentUploadDir'];
 
 	$path = $path . '/' . $attachment_id . '_' . $file_hash;
 	return $path . (file_exists($path) ? '' : '.321');
 ]]></add>
-			</search>
-		</operation>
-
+	</operation>
     <operation error="ignore">
-      <search position="replace"><![CDATA[		$path = $modSettings['pmAttachmentUploadDir'];
+		<search position="replace"><![CDATA[$path = $modSettings['pmAttachmentUploadDir'];
 
 	return $path . '/' . $attachment_id . '_' . $file_hash;
 ]]></search>
-			<add><![CDATA[		$path = $modSettings['pmAttachmentUploadDir'];
+		<add><![CDATA[$path = $modSettings['pmAttachmentUploadDir'];
 
 	$path = $path . '/' . $attachment_id . '_' . $file_hash;
 	return $path . (file_exists($path) ? '' : '.321');
 ]]></add>
-		</operation>
-	</file>
+	</operation>
+</file>
+<file name="$sourcedir/Aeva-Subs-Vital.php">
+	<operation>
+		<search position="replace"><![CDATA[$enc_name = $id . '_' . strtr($clean_name, '.', '_') . md5($clean_name) . '_ext' . $ext;]]></search>
+		<add><![CDATA[$enc_name = $id . '_' . strtr($clean_name, '.', '_') . md5($clean_name) . '_ext.' . $ext;]]></add>
+	</operation>
+</file>
 </modification>
