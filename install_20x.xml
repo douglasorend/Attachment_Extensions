@@ -14,7 +14,7 @@
 		<add><![CDATA[$path = $modSettings['attachmentUploadDir'];
 
 	$path = $path . '/' . $attachment_id . '_' . $file_hash;
-	return $path . (file_exists($path) ? '' : '.321');
+	return $path . (file_exists($path) ? '' : '.dat');
 ]]></add>
 	</operation>
     <operation error="ignore">
@@ -25,7 +25,7 @@
 		<add><![CDATA[$path = $modSettings['pmAttachmentUploadDir'];
 
 	$path = $path . '/' . $attachment_id . '_' . $file_hash;
-	return $path . (file_exists($path) ? '' : '.321');
+	return $path . (file_exists($path) ? '' : '.dat');
 ]]></add>
 	</operation>
 </file>

@@ -33,7 +33,9 @@ while ($row = $smcFunc['db_fetch_assoc']($request))
 		$path = $modSettings['attachmentUploadDir'];
 	$path = $path . '/' . $row['id_attach'] . '_' . $row['file_hash'];
 	if (file_exists($path) && is_writable($path))
-		rename($path, $path . '.321');
+		rename($path, $path . '.dat');
+	elseif (file_exists($path . '.321') && is_writable($path . '.321'))
+		rename($path . '.321', $path . '.dat');
 }
 $smcFunc['db_free_result']($request);
 
@@ -55,7 +57,7 @@ while ($row = $smcFunc['db_fetch_assoc']($tblchk))
 		$path = $modSettings['pmAttachmentUploadDir'];
 		$path = $path . '/' . $file['id_attach'] . '_' . $file['file_hash'];
 		if (file_exists($path) && is_writable($path))
-			rename($path, $path . '.321');
+			rename($path, $path . '.dat');
 	}
 	$smcFunc['db_free_result']($request);
 	break;

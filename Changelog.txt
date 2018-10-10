@@ -1,3 +1,6 @@
+v2.2 - September 21st, 2016
+o Modified package to be match the attachment extension of SMF 2.1.
+
 v2.1 - April 25th, 2015
 o Fixed package-info.xml so that Sources/Aeva-Subs-Vital.php is skipped if not found.
 

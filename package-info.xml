@@ -3,7 +3,7 @@
 <package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
 	<id>dao:Attachment_Ext</id>
 	<name>Attachment Extension for SMF 2.0.x</name>
-	<version>2.1</version>
+	<version>2.2</version>
 	<type>modification</type>
 
 	<install for="2.0 - 2.0.99">
