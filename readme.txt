@@ -36,7 +36,7 @@ This mod was tested on SMF 2.0.8, but should work on earlier versions of SMF 2.0
 The changelog can be viewed at [url=http://www.xptsp.com/board/free-modifications/attachment-extensions/]XPtsp.com[/url].
 
 [color=blue][b][size=12pt][u]License[/u][/size][/b][/color]
-Copyright (c) 2015, Douglas Orend
+Copyright (c) 2015 - 2018, Douglas Orend
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
